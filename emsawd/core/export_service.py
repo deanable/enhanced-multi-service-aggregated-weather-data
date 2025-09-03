@@ -1,49 +1,60 @@
 import pandas as pd
 import logging
+from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
 class ExportService:
     """
-    A service class dedicated to handling data export functionality.
+    Service for exporting weather data to various formats.
     """
-    @staticmethod
-    def export_to_csv(df: pd.DataFrame, filepath: str):
+
+    def __init__(self):
+        """Initialize the export service."""
+        pass
+
+    def export_to_csv(self, data_df: pd.DataFrame, filepath: str) -> None:
         """
-        Exports a pandas DataFrame to a CSV file.
+        Export weather data to a CSV file.
 
         Args:
-            df: The DataFrame to export.
-            filepath: The path to save the CSV file to.
+            data_df: DataFrame containing weather data
+            filepath: Path to save the CSV file
 
         Raises:
-            Exception: If any error occurs during the file write operation.
+            Exception: If export fails
         """
         try:
-            logger.info(f"Exporting data to CSV at: {filepath}")
-            df.to_csv(filepath, index=False)
-            logger.info("CSV export successful.")
+            # Ensure the directory exists
+            Path(filepath).parent.mkdir(parents=True, exist_ok=True)
+
+            # Export to CSV
+            data_df.to_csv(filepath, index=False)
+            logger.info(f"Successfully exported data to CSV: {filepath}")
+
         except Exception as e:
-            logger.error(f"Failed to export to CSV: {e}", exc_info=True)
+            logger.error(f"Failed to export to CSV: {e}")
             raise
 
-    @staticmethod
-    def export_to_excel(df: pd.DataFrame, filepath: str):
+    def export_to_excel(self, data_df: pd.DataFrame, filepath: str) -> None:
         """
-        Exports a pandas DataFrame to an Excel (.xlsx) file.
+        Export weather data to an Excel file.
 
         Args:
-            df: The DataFrame to export.
-            filepath: The path to save the Excel file to.
+            data_df: DataFrame containing weather data
+            filepath: Path to save the Excel file
 
         Raises:
-            Exception: If any error occurs during the file write operation.
+            Exception: If export fails
         """
         try:
-            logger.info(f"Exporting data to Excel at: {filepath}")
-            # The 'openpyxl' engine is required for .xlsx files.
-            df.to_excel(filepath, index=False, engine='openpyxl')
-            logger.info("Excel export successful.")
+            # Ensure the directory exists
+            Path(filepath).parent.mkdir(parents=True, exist_ok=True)
+
+            # Export to Excel
+            data_df.to_excel(filepath, index=False, engine='openpyxl')
+            logger.info(f"Successfully exported data to Excel: {filepath}")
+
         except Exception as e:
-            logger.error(f"Failed to export to Excel: {e}", exc_info=True)
+            logger.error(f"Failed to export to Excel: {e}")
             raise

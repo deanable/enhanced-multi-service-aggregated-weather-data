@@ -35,7 +35,6 @@ class MainWindow(QMainWindow):
         self.weather_repos = {}
         self.export_service = ExportService()
         self.settings_dialog = SettingsDialog()
-        self._populate_api_combo()
         # Default weather_service will be set after populate
 
         self.setWindowTitle("Historic Weather Data Analyzer")
@@ -48,6 +47,9 @@ class MainWindow(QMainWindow):
 
         # Create the input panel
         self._create_input_panel()
+
+        # Now populate the API combo after widgets are created
+        self._populate_api_combo()
         self.main_layout.addWidget(self.input_group_box)
 
         # Connect signals to slots
@@ -103,7 +105,8 @@ class MainWindow(QMainWindow):
         if self.weather_repos:
             first = list(self.weather_repos.keys())[0]
             self.api_combo.setCurrentText(first)
-            self.weather_service = WeatherService(self.geocoding_repo, self.weather_repos[first])
+            # Force the service update by calling _on_api_changed directly
+            self._on_api_changed(first)
 
     def _show_settings(self):
         """
@@ -209,6 +212,9 @@ class MainWindow(QMainWindow):
         self._plot_precipitation_graph()
 
     def _on_api_changed(self, text):
+        # Skip if text is empty or not in weather_repos
+        if not text or text not in self.weather_repos:
+            return
         self.weather_service = WeatherService(self.geocoding_repo, self.weather_repos[text])
 
     def _on_fetch_data_clicked(self):

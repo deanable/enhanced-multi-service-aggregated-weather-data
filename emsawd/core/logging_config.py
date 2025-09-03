@@ -1,27 +1,27 @@
 import logging
-import os
-from datetime import datetime
+import sys
+from pathlib import Path
+
+# Create logs directory if it doesn't exist
+logs_dir = Path("logs")
+logs_dir.mkdir(exist_ok=True)
 
 def setup_logging():
     """
-    Configures the root logger for the application.
+    Sets up logging configuration for the application.
     """
-    log_dir = "logs"
-    if not os.path.exists(log_dir):
-        os.makedirs(log_dir)
-
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_filename = os.path.join(log_dir, f"historic_weather_{timestamp}.log")
-
+    # Configure logging
+    log_filename = f"logs/historic_weather.log"
     logging.basicConfig(
         level=logging.INFO,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
         handlers=[
             logging.FileHandler(log_filename),
-            logging.StreamHandler()  # Also log to console for immediate feedback
+            logging.StreamHandler(sys.stdout)  # Also log to console
         ]
     )
 
+    # Create logger for this module to avoid duplicate logging
     logger = logging.getLogger(__name__)
     logger.info("Logging configured successfully.")
     logger.info(f"Log file created at: {log_filename}")

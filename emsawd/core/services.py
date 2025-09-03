@@ -1,19 +1,26 @@
-from datetime import date
+import logging
+from datetime import date, timedelta
 from typing import List
-from .interfaces import IWeatherService, IGeocodingRepository, IWeatherRepository
+from .interfaces import IWeatherRepository, IGeocodingRepository
 from .models import WeatherRecord
 
-class WeatherService(IWeatherService):
+logger = logging.getLogger(__name__)
+
+class WeatherService:
     """
-    Implements the core business logic for fetching and processing weather data.
+    Main weather service that handles business logic for weather data aggregation.
     """
-    def __init__(
-        self,
-        geocoding_repo: IGeocodingRepository,
-        weather_repo: IWeatherRepository,
-    ):
-        self._geocoding_repo = geocoding_repo
-        self._weather_repo = weather_repo
+
+    def __init__(self, geocoding_repo: IGeocodingRepository, weather_repo: IWeatherRepository):
+        """
+        Initialize the WeatherService with geocoding and weather repositories.
+
+        Args:
+            geocoding_repo: The geocoding repository implementation
+            weather_repo: The weather repository implementation
+        """
+        self.geocoding_repo = geocoding_repo
+        self.weather_repo = weather_repo
 
     def fetch_weather_for_range(
         self, location: str, start_date: date, end_date: date, years_past: int
@@ -23,41 +30,51 @@ class WeatherService(IWeatherService):
         across a number of past years.
 
         Args:
-            location: The name of the location (e.g., city).
-            start_date: The start of the date range of interest.
-            end_date: The end of the date range of interest.
-            years_past: The number of past years to query.
+            location: The location name
+            start_date: The start of the date range
+            end_date: The end of the date range
+            years_past: Number of past years to include (0 means just the current period)
 
         Returns:
-            A list of WeatherRecord objects containing the aggregated data.
+            List of WeatherRecord objects
         """
-        print(f"Fetching coordinates for {location}...")
-        latitude, longitude = self._geocoding_repo.get_coordinates(location)
+        logger.info(f"Fetching weather data for {location}, period: {start_date} to {end_date}, years: {years_past}")
 
-        all_records: List[WeatherRecord] = []
+        # Get coordinates
+        try:
+            latitude, longitude = self.geocoding_repo.get_coordinates(location)
+            logger.info(f"Coordinates for {location}: lat={latitude}, lon={longitude}")
+        except Exception as e:
+            logger.error(f"Failed to get coordinates for {location}: {e}")
+            raise ValueError(f"Could not find location: {location}") from e
 
-        for year_offset in range(1, years_past + 1):
+        all_records = []
+
+        # Fetch data for each offset year
+        for year_offset in range(years_past + 1):
+            # Calculate the offset date range
+            date_offset = timedelta(days=365 * year_offset)
+            current_start = start_date - date_offset
+            current_end = end_date - date_offset
+            current_year = current_start.year
+
+            logger.info(f"Fetching data for year offset {year_offset} ({current_year}): {current_start} to {current_end}")
+
             try:
-                # Calculate the historical date range for the current iteration
-                hist_start_date = start_date.replace(year=start_date.year - year_offset)
-                hist_end_date = end_date.replace(year=end_date.year - year_offset)
-
-                print(
-                    f"Fetching data for year {hist_start_date.year}, "
-                    f"range: {hist_start_date} to {hist_end_date}"
+                # Fetch records for this period
+                period_records = self.weather_repo.get_historical_weather(
+                    latitude, longitude, current_start, current_end
                 )
 
-                # Fetch data for the historical range
-                records = self._weather_repo.get_historical_weather(
-                    latitude, longitude, hist_start_date, hist_end_date
-                )
-                all_records.extend(records)
+                logger.info(f"Fetched {len(period_records)} records for {current_year}")
+
+                # Add to collection
+                all_records.extend(period_records)
 
             except Exception as e:
-                # Log the error and continue to the next year
-                print(f"Error fetching data for year offset {year_offset}: {e}")
-                # In a real app, this would use the logging service
+                logger.error(f"Failed to fetch data for {current_year}: {e}")
+                # Continue with other years even if one fails
                 continue
 
-        print(f"Successfully fetched and aggregated {len(all_records)} records.")
+        logger.info(f"Total records collected: {len(all_records)}")
         return all_records
