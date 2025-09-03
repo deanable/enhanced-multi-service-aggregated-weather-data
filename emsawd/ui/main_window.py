@@ -12,7 +12,6 @@ from PyQt6.QtWidgets import (
 from emsawd.core.services import WeatherService
 from emsawd.repositories.geocoding_repository import GeocodingRepository
 from emsawd.repositories.weather_repository import WeatherRepository
-from emsawd.repositories.mock_weather_repository import MockWeatherRepository
 from emsawd.repositories.openweather_repository import OpenWeatherRepository
 from emsawd.repositories.weatherapi_repository import WeatherAPIRepository
 from emsawd.repositories.accuweather_repository import AccuWeatherRepository
@@ -83,7 +82,6 @@ class MainWindow(QMainWindow):
 
         # Always add free ones
         self.weather_repos["Open-Meteo"] = WeatherRepository()
-        self.weather_repos["Mock API"] = MockWeatherRepository()
 
         # Add others if enabled
         if self.settings_dialog.is_enabled("OpenWeatherMap"):

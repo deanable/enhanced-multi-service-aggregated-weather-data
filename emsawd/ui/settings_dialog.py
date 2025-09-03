@@ -19,7 +19,6 @@ class SettingsDialog(QDialog):
         # Providers and their signup URLs
         self.providers = {
             "Open-Meteo": {"url": "", "required": False, "key": ""},
-            "Mock API": {"url": "", "required": False, "key": ""},
             "OpenWeatherMap": {"url": "https://home.openweathermap.org/api_keys", "required": True, "key": ""},
             "WeatherAPI": {"url": "https://www.weatherapi.com/", "required": True, "key": ""},
             "AccuWeather": {"url": "https://developer.accuweather.com/", "required": True, "key": ""}

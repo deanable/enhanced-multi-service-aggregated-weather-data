@@ -1,0 +1,239 @@
+2025-09-03 11:41:25,499 - emsawd.core.logging_config - INFO - Logging configured successfully.
+2025-09-03 11:41:25,500 - emsawd.core.logging_config - INFO - Log file created at: logs\historic_weather_20250903_114125.log
+2025-09-03 11:41:25,500 - root - INFO - Application starting up.
+2025-09-03 11:41:25,737 - root - INFO - Main window shown. Starting event loop.
+2025-09-03 11:42:42,572 - emsawd.repositories.geocoding_repository - INFO - Requesting coordinates for 'johannesburg' from https://geocoding-api.open-meteo.com/v1/search
+2025-09-03 11:42:43,662 - emsawd.repositories.geocoding_repository - INFO - API response status: 200
+2025-09-03 11:42:43,662 - emsawd.repositories.geocoding_repository - INFO - Successfully found coordinates for 'johannesburg': (-26.20227, 28.04363)
+2025-09-03 11:42:43,665 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-26.20227, lon=28.04363
+2025-09-03 11:42:44,683 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:42:44,684 - emsawd.repositories.weather_repository - INFO - Successfully parsed 4 records from API response.
+2025-09-03 11:42:44,686 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-26.20227, lon=28.04363
+2025-09-03 11:42:45,799 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:42:45,800 - emsawd.repositories.weather_repository - INFO - Successfully parsed 4 records from API response.
+2025-09-03 11:42:45,802 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-26.20227, lon=28.04363
+2025-09-03 11:42:46,824 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:42:46,825 - emsawd.repositories.weather_repository - INFO - Successfully parsed 4 records from API response.
+2025-09-03 11:42:46,829 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-26.20227, lon=28.04363
+2025-09-03 11:42:47,822 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:42:47,822 - emsawd.repositories.weather_repository - INFO - Successfully parsed 4 records from API response.
+2025-09-03 11:42:47,823 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-26.20227, lon=28.04363
+2025-09-03 11:42:48,822 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:42:48,822 - emsawd.repositories.weather_repository - INFO - Successfully parsed 4 records from API response.
+2025-09-03 11:42:48,880 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:48,881 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:48,882 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:48,883 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:48,884 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:48,885 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:48,885 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:48,887 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:48,888 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:48,889 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:49,037 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:49,039 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:59,191 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:59,192 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:59,285 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:42:59,286 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:23,383 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:23,385 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:23,385 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:23,386 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:23,387 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:23,388 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:23,389 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:23,389 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:23,390 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:23,391 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:23,490 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:23,491 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:25,718 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:25,719 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:25,809 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:25,809 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:31,477 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:31,479 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:31,479 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:31,480 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:31,481 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:31,482 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:31,482 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:31,483 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:31,483 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:31,484 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:31,581 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:31,583 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:43:55,139 - emsawd.repositories.geocoding_repository - INFO - Requesting coordinates for 'cape town' from https://geocoding-api.open-meteo.com/v1/search
+2025-09-03 11:43:56,146 - emsawd.repositories.geocoding_repository - INFO - API response status: 200
+2025-09-03 11:43:56,146 - emsawd.repositories.geocoding_repository - INFO - Successfully found coordinates for 'cape town': (-33.92584, 18.42322)
+2025-09-03 11:43:56,148 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:43:57,152 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:43:57,153 - emsawd.repositories.weather_repository - INFO - Successfully parsed 4 records from API response.
+2025-09-03 11:43:57,155 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:43:58,016 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:43:58,016 - emsawd.repositories.weather_repository - INFO - Successfully parsed 4 records from API response.
+2025-09-03 11:43:58,017 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:43:59,272 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:43:59,273 - emsawd.repositories.weather_repository - INFO - Successfully parsed 4 records from API response.
+2025-09-03 11:43:59,274 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:44:00,172 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:44:00,172 - emsawd.repositories.weather_repository - INFO - Successfully parsed 4 records from API response.
+2025-09-03 11:44:00,173 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:44:01,341 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:44:01,341 - emsawd.repositories.weather_repository - INFO - Successfully parsed 4 records from API response.
+2025-09-03 11:44:01,362 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:01,364 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:01,364 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:01,366 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:01,366 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:01,367 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:01,368 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:01,369 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:01,370 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:01,371 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:01,493 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:01,495 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:15,520 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:15,522 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:15,627 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:15,628 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:44:59,374 - emsawd.repositories.geocoding_repository - INFO - Requesting coordinates for 'cape town' from https://geocoding-api.open-meteo.com/v1/search
+2025-09-03 11:45:00,358 - emsawd.repositories.geocoding_repository - INFO - API response status: 200
+2025-09-03 11:45:00,358 - emsawd.repositories.geocoding_repository - INFO - Successfully found coordinates for 'cape town': (-33.92584, 18.42322)
+2025-09-03 11:45:00,360 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:45:01,281 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:45:01,281 - emsawd.repositories.weather_repository - INFO - Successfully parsed 31 records from API response.
+2025-09-03 11:45:01,283 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:45:02,609 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:45:02,610 - emsawd.repositories.weather_repository - INFO - Successfully parsed 31 records from API response.
+2025-09-03 11:45:02,611 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:45:03,698 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:45:03,699 - emsawd.repositories.weather_repository - INFO - Successfully parsed 31 records from API response.
+2025-09-03 11:45:03,700 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:45:06,031 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:45:06,032 - emsawd.repositories.weather_repository - INFO - Successfully parsed 31 records from API response.
+2025-09-03 11:45:06,033 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:45:07,046 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:45:07,047 - emsawd.repositories.weather_repository - INFO - Successfully parsed 31 records from API response.
+2025-09-03 11:45:07,101 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:07,104 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:07,216 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:07,218 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:07,384 - emsawd.repositories.geocoding_repository - INFO - Requesting coordinates for 'cape town' from https://geocoding-api.open-meteo.com/v1/search
+2025-09-03 11:45:08,280 - emsawd.repositories.geocoding_repository - INFO - API response status: 200
+2025-09-03 11:45:08,281 - emsawd.repositories.geocoding_repository - INFO - Successfully found coordinates for 'cape town': (-33.92584, 18.42322)
+2025-09-03 11:45:08,283 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:45:09,324 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:45:09,325 - emsawd.repositories.weather_repository - INFO - Successfully parsed 31 records from API response.
+2025-09-03 11:45:09,326 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:45:10,197 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:45:10,198 - emsawd.repositories.weather_repository - INFO - Successfully parsed 31 records from API response.
+2025-09-03 11:45:10,199 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:45:11,190 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:45:11,190 - emsawd.repositories.weather_repository - INFO - Successfully parsed 31 records from API response.
+2025-09-03 11:45:11,192 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:45:12,201 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:45:12,201 - emsawd.repositories.weather_repository - INFO - Successfully parsed 31 records from API response.
+2025-09-03 11:45:12,202 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:45:13,234 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:45:13,235 - emsawd.repositories.weather_repository - INFO - Successfully parsed 31 records from API response.
+2025-09-03 11:45:13,285 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:13,288 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:13,393 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:13,395 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:20,403 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:20,405 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:20,407 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:20,409 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:20,411 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:20,414 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:20,416 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:20,419 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:20,421 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:20,423 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:20,557 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:20,566 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:27,873 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:27,875 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:28,013 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:28,015 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:54,468 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:54,470 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:54,472 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:54,474 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:54,476 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:54,479 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:54,481 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:54,483 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:54,485 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:54,487 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:54,618 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:45:54,628 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:00,086 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:00,089 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:00,225 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:00,227 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:23,334 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:23,337 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:23,339 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:23,343 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:23,346 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:23,348 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:23,350 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:23,352 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:23,354 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:23,358 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:23,500 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:46:23,511 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:15,313 - emsawd.repositories.geocoding_repository - INFO - Requesting coordinates for 'cape town' from https://geocoding-api.open-meteo.com/v1/search
+2025-09-03 11:47:17,197 - emsawd.repositories.geocoding_repository - INFO - API response status: 200
+2025-09-03 11:47:17,197 - emsawd.repositories.geocoding_repository - INFO - Successfully found coordinates for 'cape town': (-33.92584, 18.42322)
+2025-09-03 11:47:17,199 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:47:18,705 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:47:18,707 - emsawd.repositories.weather_repository - INFO - Successfully parsed 30 records from API response.
+2025-09-03 11:47:18,709 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:47:20,895 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:47:20,896 - emsawd.repositories.weather_repository - INFO - Successfully parsed 30 records from API response.
+2025-09-03 11:47:20,897 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:47:22,376 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:47:22,376 - emsawd.repositories.weather_repository - INFO - Successfully parsed 30 records from API response.
+2025-09-03 11:47:22,378 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:47:23,382 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:47:23,383 - emsawd.repositories.weather_repository - INFO - Successfully parsed 30 records from API response.
+2025-09-03 11:47:23,384 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:47:24,632 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:47:24,632 - emsawd.repositories.weather_repository - INFO - Successfully parsed 30 records from API response.
+2025-09-03 11:47:24,679 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:24,681 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:24,684 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:24,686 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:24,688 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:24,690 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:24,692 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:24,694 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:24,696 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:24,698 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:24,850 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:24,859 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:29,892 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:29,895 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:30,000 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:30,002 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:37,955 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:37,957 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:37,960 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:37,962 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:37,964 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:37,966 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:37,968 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:37,970 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:37,972 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:37,974 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:38,091 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:38,103 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:44,572 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:44,575 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:44,675 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:47:44,676 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:48:29,754 - root - INFO - Application exiting with code 0.

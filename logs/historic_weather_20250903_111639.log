@@ -1,0 +1,25 @@
+2025-09-03 11:16:39,173 - emsawd.core.logging_config - INFO - Logging configured successfully.
+2025-09-03 11:16:39,174 - emsawd.core.logging_config - INFO - Log file created at: logs\historic_weather_20250903_111639.log
+2025-09-03 11:16:39,174 - root - INFO - Application starting up.
+2025-09-03 11:16:39,400 - root - INFO - Main window shown. Starting event loop.
+2025-09-03 11:17:40,103 - emsawd.repositories.geocoding_repository - INFO - Requesting coordinates for 'cape town' from https://geocoding-api.open-meteo.com/v1/search
+2025-09-03 11:17:41,124 - emsawd.repositories.geocoding_repository - INFO - API response status: 200
+2025-09-03 11:17:41,124 - emsawd.repositories.geocoding_repository - INFO - Successfully found coordinates for 'cape town': (-33.92584, 18.42322)
+2025-09-03 11:17:41,128 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:17:43,311 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:17:43,311 - emsawd.repositories.weather_repository - INFO - Successfully parsed 15 records from API response.
+2025-09-03 11:17:43,312 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:17:44,327 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:17:44,327 - emsawd.repositories.weather_repository - INFO - Successfully parsed 15 records from API response.
+2025-09-03 11:17:44,328 - emsawd.repositories.weather_repository - INFO - Requesting historical weather for lat=-33.92584, lon=18.42322
+2025-09-03 11:17:45,190 - emsawd.repositories.weather_repository - INFO - API response status: 200
+2025-09-03 11:17:45,191 - emsawd.repositories.weather_repository - INFO - Successfully parsed 15 records from API response.
+2025-09-03 11:17:45,208 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:17:45,209 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:17:45,209 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:17:45,210 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:17:45,210 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:17:45,211 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:17:45,282 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:17:45,283 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-03 11:18:23,336 - root - INFO - Application exiting with code 0.
