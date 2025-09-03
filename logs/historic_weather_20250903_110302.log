@@ -1,3 +1,0 @@
-2025-09-03 11:03:02,980 - emsawd.core.logging_config - INFO - Logging configured successfully.
-2025-09-03 11:03:02,980 - emsawd.core.logging_config - INFO - Log file created at: logs\historic_weather_20250903_110302.log
-2025-09-03 11:03:02,981 - root - INFO - Application starting up.
