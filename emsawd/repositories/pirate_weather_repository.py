@@ -42,7 +42,7 @@ class PirateWeatherRepository(IWeatherRepository):
             try:
                 logger.info(f"Requesting Pirate Weather for {current_date} at lat={latitude}, lon={longitude}")
                 url = f"{self.BASE_URL}/{latitude},{longitude},{timestamp}"
-                response = requests.get(url)
+                response = requests.get(url, timeout=30)
                 response.raise_for_status()
                 logger.info(f"API response status: {response.status_code}")
 

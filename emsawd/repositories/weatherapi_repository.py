@@ -50,7 +50,7 @@ class WeatherAPIRepository(IWeatherRepository):
                     "q": query,
                     "dt": dt_str
                 }
-                response = requests.get(self.BASE_URL, params=params)
+                response = requests.get(self.BASE_URL, params=params, timeout=30)
                 response.raise_for_status()
                 logger.info(f"API response status: {response.status_code}")
 

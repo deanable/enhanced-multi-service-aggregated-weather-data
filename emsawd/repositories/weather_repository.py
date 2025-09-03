@@ -42,7 +42,7 @@ class WeatherRepository(IWeatherRepository):
         try:
             logger.info(f"Requesting historical weather for lat={latitude}, lon={longitude}")
             logger.debug(f"Request params: {params}")
-            response = requests.get(self.API_URL, params=params)
+            response = requests.get(self.API_URL, params=params, timeout=30)
             response.raise_for_status()
             logger.info(f"API response status: {response.status_code}")
 

@@ -31,7 +31,7 @@ class GeocodingRepository(IGeocodingRepository):
         try:
             logger.info(f"Requesting coordinates for '{location_name}' from {self.API_URL}")
             logger.debug(f"Request params: {params}")
-            response = requests.get(self.API_URL, params=params)
+            response = requests.get(self.API_URL, params=params, timeout=30)
             response.raise_for_status()
             logger.info(f"API response status: {response.status_code}")
 

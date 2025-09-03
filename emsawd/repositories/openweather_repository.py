@@ -50,7 +50,7 @@ class OpenWeatherRepository(IWeatherRepository):
                     "dt": timestamp,
                     "appid": self.api_key
                 }
-                response = requests.get(self.BASE_URL, params=params)
+                response = requests.get(self.BASE_URL, params=params, timeout=30)
                 response.raise_for_status()
                 logger.info(f"API response status: {response.status_code}")
 

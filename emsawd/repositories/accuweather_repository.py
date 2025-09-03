@@ -25,7 +25,7 @@ class AccuWeatherRepository(IWeatherRepository):
             "q": f"{latitude},{longitude}",
             "language": "en-us"
         }
-        response = requests.get(self.GEOPOSITION_URL, params=params)
+        response = requests.get(self.GEOPOSITION_URL, params=params, timeout=30)
         response.raise_for_status()
         data = response.json()
         return data.get("Key", "")
@@ -69,7 +69,7 @@ class AccuWeatherRepository(IWeatherRepository):
                     "startDateTime": start_dt,
                     "endDateTime": end_dt
                 }
-                response = requests.get(url, params=params)
+                response = requests.get(url, params=params, timeout=30)
                 response.raise_for_status()
                 logger.info(f"API response status: {response.status_code}")
 

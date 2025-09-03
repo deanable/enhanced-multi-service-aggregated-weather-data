@@ -1,7 +1,7 @@
 import sys
 from datetime import date, timedelta
 import pandas as pd
-from PyQt6.QtCore import QDate
+from PyQt6.QtCore import QDate, QThread, pyqtSignal
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QTabWidget, QStatusBar,
     QGroupBox, QGridLayout, QLabel, QComboBox, QDateEdit, QSpinBox,
@@ -9,15 +9,61 @@ from PyQt6.QtWidgets import (
 )
 
 # Backend imports
-from emsawd.core.services import WeatherService
-from emsawd.repositories.geocoding_repository import GeocodingRepository
-from emsawd.repositories.weather_repository import WeatherRepository
-from emsawd.repositories.openweather_repository import OpenWeatherRepository
-from emsawd.repositories.weatherapi_repository import WeatherAPIRepository
-from emsawd.repositories.accuweather_repository import AccuWeatherRepository
-from emsawd.core.export_service import ExportService
+try:
+    from emsawd.core.services import WeatherService
+    from emsawd.repositories.geocoding_repository import GeocodingRepository
+    from emsawd.repositories.weather_repository import WeatherRepository
+    from emsawd.repositories.openweather_repository import OpenWeatherRepository
+    from emsawd.repositories.weatherapi_repository import WeatherAPIRepository
+    from emsawd.repositories.accuweather_repository import AccuWeatherRepository
+    from emsawd.core.export_service import ExportService
+except ImportError:
+    # For relative import when run from emsawd directory
+    from ..core.services import WeatherService
+    from ..repositories.geocoding_repository import GeocodingRepository
+    from ..repositories.weather_repository import WeatherRepository
+    from ..repositories.openweather_repository import OpenWeatherRepository
+    from ..repositories.weatherapi_repository import WeatherAPIRepository
+    from ..repositories.accuweather_repository import AccuWeatherRepository
+    from ..core.export_service import ExportService
+
 from .matplotlib_widget import MatplotlibCanvas
 from .settings_dialog import SettingsDialog
+
+
+class WeatherDataWorker(QThread):
+    """Worker thread for fetching weather data to prevent UI freezing."""
+
+    # Signals for communication with main thread
+    progress_updated = pyqtSignal(str)
+    fetch_completed = pyqtSignal(list)
+    fetch_error = pyqtSignal(str)
+
+    def __init__(self, weather_service, location, start_date, end_date, years):
+        super().__init__()
+        self.weather_service = weather_service
+        self.location = location
+        self.start_date = start_date
+        self.end_date = end_date
+        self.years = years
+
+    def run(self):
+        """Execute the weather data fetching in the background thread."""
+        try:
+            self.progress_updated.emit("Initializing geocoding service...")
+
+            # The service will handle internal progress updates
+            self.progress_updated.emit(f"Fetching data for {self.location}...")
+
+            records = self.weather_service.fetch_weather_for_range(
+                self.location, self.start_date, self.end_date, self.years
+            )
+
+            self.progress_updated.emit(f"Successfully fetched {len(records)} records.")
+            self.fetch_completed.emit(records)
+
+        except Exception as e:
+            self.fetch_error.emit(str(e))
 
 
 class MainWindow(QMainWindow):
@@ -37,6 +83,9 @@ class MainWindow(QMainWindow):
         self.settings_dialog = SettingsDialog()
         # Default weather_service will be set after populate
 
+        # Initialize worker thread
+        self.worker_thread = None
+
         self.setWindowTitle("Historic Weather Data Analyzer")
         self.setGeometry(100, 100, 1200, 800)  # x, y, width, height
 
@@ -50,7 +99,6 @@ class MainWindow(QMainWindow):
 
         # Now populate the API combo after widgets are created
         self._populate_api_combo()
-        self.main_layout.addWidget(self.input_group_box)
 
         # Connect signals to slots
         self.preset_combo.currentTextChanged.connect(self._on_preset_changed)
@@ -124,9 +172,24 @@ class MainWindow(QMainWindow):
 
     def _create_input_panel(self):
         """
-        Creates the input panel with all the user controls.
+        Creates the input panel with all user controls organized in logical groupboxes.
         """
-        self.input_group_box = QGroupBox("Query Configuration")
+        # Main container for all input groups
+        self.input_container = QWidget()
+        self.input_container_layout = QVBoxLayout(self.input_container)
+
+        # Create individual groupboxes
+        self._create_date_range_group()
+        self._create_location_api_group()
+        self._create_actions_display_group()
+
+        # Set main layout
+        self.input_container.setLayout(self.input_container_layout)
+        self.main_layout.addWidget(self.input_container)
+
+    def _create_date_range_group(self):
+        """Creates the date range and historical data configuration groupbox."""
+        date_range_group = QGroupBox("Date Range & Historical Data")
         layout = QGridLayout()
 
         # Date Range Presets
@@ -161,51 +224,70 @@ class MainWindow(QMainWindow):
         self.years_spinbox.setValue(3)
         layout.addWidget(self.years_spinbox, 2, 1)
 
+        date_range_group.setLayout(layout)
+        self.input_container_layout.addWidget(date_range_group)
+
+    def _create_location_api_group(self):
+        """Creates the location and API provider selection groupbox."""
+        location_api_group = QGroupBox("Location & Data Source")
+        layout = QGridLayout()
+
         # Location
-        layout.addWidget(QLabel("Location (City):"), 2, 2)
+        layout.addWidget(QLabel("Location (City):"), 0, 0)
         self.location_edit = QLineEdit()
         self.location_edit.setPlaceholderText("e.g., New York")
-        layout.addWidget(self.location_edit, 2, 3)
+        layout.addWidget(self.location_edit, 0, 1, 1, 2)
+
+        # Weather API Provider
+        layout.addWidget(QLabel("Weather API:"), 1, 0)
+        self.api_combo = QComboBox()
+        layout.addWidget(self.api_combo, 1, 1)
+
+        # Provider Settings
+        self.settings_button = QPushButton("Provider Settings")
+        layout.addWidget(self.settings_button, 1, 2)
+
+        location_api_group.setLayout(layout)
+        self.input_container_layout.addWidget(location_api_group)
+
+    def _create_actions_display_group(self):
+        """Creates the actions, export buttons and display options groupbox."""
+        actions_display_group = QGroupBox("Actions & Display Options")
+        layout = QGridLayout()
 
         # Fetch Button
         self.fetch_button = QPushButton("Fetch Historical Data")
-        layout.addWidget(self.fetch_button, 3, 0, 1, 2)
+        layout.addWidget(self.fetch_button, 0, 0, 1, 2)
+        layout.setRowStretch(0, 1)
 
         # Export Buttons
         self.export_csv_button = QPushButton("Export to CSV")
         self.export_csv_button.setEnabled(False)
-        layout.addWidget(self.export_csv_button, 3, 2)
+        layout.addWidget(self.export_csv_button, 1, 0)
 
         self.export_excel_button = QPushButton("Export to Excel")
         self.export_excel_button.setEnabled(False)
-        layout.addWidget(self.export_excel_button, 3, 3)
+        layout.addWidget(self.export_excel_button, 1, 1)
 
-        self.export_jpeg_button = QPushButton("Export Precipitation Graph to JPEG")
+        self.export_jpeg_button = QPushButton("Export Graph to JPEG")
         self.export_jpeg_button.setEnabled(False)
-        layout.addWidget(self.export_jpeg_button, 6, 2)
+        layout.addWidget(self.export_jpeg_button, 1, 2)
 
-        # Weather API Provider
-        layout.addWidget(QLabel("Weather API:"), 4, 0)
-        self.api_combo = QComboBox()
-        layout.addWidget(self.api_combo, 4, 1)
-
-        # Display Averages
-        self.averages_checkbox = QCheckBox("Display Averages")
-        layout.addWidget(self.averages_checkbox, 4, 2)
-
-        # Provider Settings
-        self.settings_button = QPushButton("Provider Settings")
-        layout.addWidget(self.settings_button, 4, 3)
+        # Display Options
+        layout.addWidget(QLabel("Display:"), 2, 0)
+        self.averages_checkbox = QCheckBox("Show Averages")
+        layout.addWidget(self.averages_checkbox, 2, 1)
 
         # Precipitation Threshold
-        layout.addWidget(QLabel("Precipitation Threshold:"), 5, 0)
+        layout.addWidget(QLabel("Precipitation Threshold:"), 3, 0)
         self.precip_threshold_spinbox = QSpinBox()
         self.precip_threshold_spinbox.setRange(0, 50)
         self.precip_threshold_spinbox.setValue(5)
         self.precip_threshold_spinbox.setSuffix(" mm")
-        layout.addWidget(self.precip_threshold_spinbox, 5, 1)
+        layout.addWidget(self.precip_threshold_spinbox, 3, 1)
 
-        self.input_group_box.setLayout(layout)
+        actions_display_group.setLayout(layout)
+        self.input_container_layout.addWidget(actions_display_group)
 
     def _on_display_averages_changed(self, state):
         self._plot_temperature_graph()
@@ -219,18 +301,20 @@ class MainWindow(QMainWindow):
 
     def _on_fetch_data_clicked(self):
         """
-        Handles the button click to fetch and display weather data.
+        Handles the button click to fetch and display weather data using a worker thread.
         """
         location = self.location_edit.text()
-        if not location:
+        if not location.strip():
             self.status_bar.showMessage("Error: Location cannot be empty.", 5000)
             return
 
-        try:
-            self.status_bar.showMessage(f"Fetching data for {location}...")
-            self.fetch_button.setEnabled(False)
+        # Prevent multiple concurrent fetches
+        if self.worker_thread is not None and self.worker_thread.isRunning():
+            self.status_bar.showMessage("A data fetch is already in progress...", 3000)
+            return
 
-            # Get parameters from UI
+        # Get parameters from UI with validation
+        try:
             start_date = self.start_date_edit.date().toPyDate()
             end_date = self.end_date_edit.date().toPyDate()
             years = self.years_spinbox.value()
@@ -244,39 +328,69 @@ class MainWindow(QMainWindow):
                 self.status_bar.showMessage("Start date cannot be after end date.", 5000)
                 return
 
-            # Call the service
-            records = self.weather_service.fetch_weather_for_range(
-                location, start_date, end_date, years
-            )
+        except Exception as e:
+            self.status_bar.showMessage(f"Error with date parameters: {e}", 5000)
+            return
 
+        # Disable UI controls during fetch
+        self.fetch_button.setEnabled(False)
+        self.status_bar.showMessage(f"Initiating data fetch for {location.strip()}...")
+
+        # Create and start worker thread
+        self.worker_thread = WeatherDataWorker(
+            self.weather_service, location.strip(), start_date, end_date, years
+        )
+
+        # Connect worker signals to main thread slots
+        self.worker_thread.progress_updated.connect(self._on_worker_progress)
+        self.worker_thread.fetch_completed.connect(self._on_worker_completed)
+        self.worker_thread.fetch_error.connect(self._on_worker_error)
+        self.worker_thread.finished.connect(lambda: self._cleanup_worker())
+
+        # Start the worker thread
+        self.worker_thread.start()
+
+    def _on_worker_progress(self, message):
+        """Handle progress updates from worker thread."""
+        self.status_bar.showMessage(message, 3000)
+
+    def _on_worker_completed(self, records):
+        """Handle successful completion of weather data fetch."""
+        try:
             # Populate the data grid with the records
             self.data_df = self._populate_data_grid(records)
 
-            # Plot the graphs and manage button state
+            # Plot the graphs and enable export buttons
             if self.data_df is not None and not self.data_df.empty:
                 self._plot_temperature_graph()
                 self._plot_precipitation_graph()
                 self.export_csv_button.setEnabled(True)
                 self.export_excel_button.setEnabled(True)
                 self.export_jpeg_button.setEnabled(True)
-                self.status_bar.showMessage(f"Successfully loaded {len(records)} records.", 5000)
+                self.status_bar.showMessage(f"✅ Successfully loaded {len(records)} records.", 5000)
             else:
                 self.export_csv_button.setEnabled(False)
                 self.export_excel_button.setEnabled(False)
                 # Message is already shown by _populate_data_grid if no data
 
-        except ValueError as e:
-            self.status_bar.showMessage(f"Error: {e}", 10000)
-            self.export_csv_button.setEnabled(False)
-            self.export_excel_button.setEnabled(False)
-            self.export_jpeg_button.setEnabled(False)
         except Exception as e:
-            self.status_bar.showMessage(f"An unexpected error occurred: {e}", 10000)
+            self.status_bar.showMessage(f"❌ Error processing data: {e}", 10000)
             self.export_csv_button.setEnabled(False)
             self.export_excel_button.setEnabled(False)
-            self.export_jpeg_button.setEnabled(False)
-        finally:
-            self.fetch_button.setEnabled(True)
+
+    def _on_worker_error(self, error_message):
+        """Handle errors from worker thread."""
+        self.status_bar.showMessage(f"❌ {error_message}", 10000)
+        self.export_csv_button.setEnabled(False)
+        self.export_excel_button.setEnabled(False)
+        self.export_jpeg_button.setEnabled(False)
+
+    def _cleanup_worker(self):
+        """Clean up after worker thread completes."""
+        if self.worker_thread:
+            self.worker_thread = None
+        self.fetch_button.setEnabled(True)
+        self.status_bar.showMessage("Ready", 2000)
 
 
     def _on_preset_changed(self, text: str):
